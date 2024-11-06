@@ -4,10 +4,10 @@
 
 ## 目錄
 
-[DB ch01](#db-ch01) 
-[DB ch02](#db-ch02) 
-[DB ch03](#db-ch03) 
-[DB ch04](#db-ch04) 
+[DB ch01](#db-ch01-資料庫概念)
+[DB ch02](#db-ch02-資料庫設計與er模型)
+[DB ch03](#db-ch03-增強型er模型與商業規則)
+[DB ch04](#db-ch04-正規化理論與設計)
 
 ### **DB ch01: 資料庫概念**
 
