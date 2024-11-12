@@ -1,78 +1,62 @@
-# The Enhanced E-R Model
+### 第3章：增強的實體-關係(EER)模型和商業規則
+ 
+#### 學習目標
+1. 定義術語
+2. 理解超類/子類關係的使用
+3. 使用特化和概括技術
+4. 指定完整性和不相交性約束
+5. 為商業情境開發超類/子類層次結構
+6. 開發實體集群
+7. 解釋通用（包裝）數據模型
+8. 描述數據建模專案中使用包裝數據模型的特點。
 
-## 增強的E-R模型
+#### 超類和子類
+- **增強實體-關係（EER）模型**：在原始ER模型基礎上擴展了新建模構造。
+- **子類**：在實體類型中的一個子群組，其具有與其他子群組不同的屬性。
+- **超類**：與一個或多個子類有關的通用實體類型。
+- **屬性繼承**：子類實體繼承超類的所有屬性和關係的值；子類實例也是超類的實例。
 
-## 目錄
+#### 圖示
+- 基本的超類/子類表示法（EER表示法和Microsoft Visio表示法）展示了EER模型的不同圖形符號。
+  
+#### 關係與子類
+- 超類級別的關係表明所有子類都會參與該關係。
+- 子類的實例可能參加一個僅適用於該子類的獨特關係，此情況下該關係在子類級別上展示。
 
-[3.1 Define terms](#31-define-terms)
-[3.2 Understand use of supertype/subtype relationships](#32-understand-use-of-supertypesubtype-relationships)
-[3.3 Use specialization and generalization techniques](#33-use-specialization-and-generalization-techniques)
-[3.4 Specify completeness and disjointness constraints](#34-specify-completeness-and-disjointness-constraints)
-[3.5 Develop supertype/subtype hierarchies for business situations](#35-develop-supertypesubtype-hierarchies-for-business-situations)
-[3.6 Develop entity clusters](#36-develop-entity-clusters)
-[3.7 Explain universal (packaged) data model](#37-explain-universal-packaged-data-model)
-[3.8 Describe special features of data modeling project using packaged data model](#38-describe-special-features-of-data-modeling-project-using-packaged-data-model)
+#### 概括與特化
+- **概括**：從多個特化實體類型定義出更一般的實體類型的過程（自下而上）。
+- **特化**：從超類中定義一個或多個子類並形成超類/子類關係的過程（自上而下）。
 
-## 3.1 Define terms
+#### 限制
+- **完整性約束**：指定一個超類實例是否必須同時為至少一個子類的成員。
+  - **全特化規則**：是（用雙線表示）。
+  - **部分特化規則**：否（用單線表示）。
+  
+- **不相交性約束**：指定一個超類的實例是否可以同時成為兩個（或多個）子類的成員。
+  - **不相交規則**：一個超類的實例只能是其中一個子類的成員。
+  - **重疊規則**：一個超類的實例可以是多個子類的成員。
 
-### 定義術語
+#### 子類判別器
+- **子類判別器**：一個超類的屬性，其值決定目標子類。
+  - **不相交**：使用簡單屬性，具有不同值以指示可能的子類。
+  - **重疊**：使用複合屬性，每個部分對應不同的子類，包含布爾值以指示實例是否屬於相關子類。
 
-[回目錄](#目錄)
+#### 實體集群
+- 當EER圖中有太多實體和關係時，讀取變得困難。
+- **解決方案**：將實體和關係組成實體集群。
+- **實體集群**：將一組一個或多個實體類型及其關聯關係組成一個抽象實體類型。
 
----
-
-## 3.2 Understand use of supertype/subtype relationships
-
-### 理解超類型/子類型關係的使用
-
-[回目錄](#目錄)
-
----
-
-## 3.3 Use specialization and generalization techniques
-
-### 使用專業化和泛化技術
-
-[回目錄](#目錄)
-
----
-
-## 3.4 Specify completeness and disjointness constraints
-
-### 指定完整性和不相交約束
-
-[回目錄](#目錄)
-
----
-
-## 3.5 Develop supertype/subtype hierarchies for business situations
-
-### 開發適合業務情況的超類型/子類型層次結構
-
-[回目錄](#目錄)
-
----
-
-## 3.6 Develop entity clusters
-
-### 開發實體集群
-
-[回目錄](#目錄)
-
----
-
-## 3.7 Explain universal (packaged) data model
-
-### 解釋通用（打包）資料模型
-
-[回目錄](#目錄)
-
----
-
-## 3.8 Describe special features of data modeling project using packaged data model
-
-### 使用以下方法描述資料建模專案的特殊功能打包資料模型
-
-[回目錄](#目錄)
-
----
+#### 包裝數據模型
+- **預定義數據模型**：可以是通用的或行業特定的。
+- **通用數據模型**：可重複用作數據建模專案起點的通用或模板數據模型（也稱為“模式”）。
+- **優點**：
+  - 使用經過驗證的模型組件
+  - 節省時間和成本
+  - 降低數據模型錯誤的可能性
+  - 更容易隨時間演變和修改
+  - 有助於需求確定
+  - 易於閱讀
+  - 超類/子類層次結構促進重用
+  - 多對多關係增強了模型的靈活性
+  - 供應商提供的數據模型促進了與供應商應用程式的集成
+  - 通用模型支持跨組織系統。
